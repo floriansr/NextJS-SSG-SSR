@@ -28,6 +28,16 @@ export async function getStaticProps() {
   // }
 }
 
+  // Server-Side-Rendering
+  
+// export async function getServerSideProps(context) {
+//   return {
+//     props: {
+//       // props for your component
+//     },
+//   };
+// }
+
 
 
 export default function Home({ allPostsData }) {
