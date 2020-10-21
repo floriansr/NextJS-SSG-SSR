@@ -10,26 +10,27 @@ export async function getStaticProps() {
       allPostsData,
     },
   };
-
-  // Instead of the file system,
-  // fetch post data from an external API endpoint
-  // const res = await fetch("..");
-  // return res.json();
-
-  // You can also query the database directly:
-
-  // import someDatabaseSDK from 'someDatabaseSDK'
-  // const databaseClient = someDatabaseSDK.createClient(...)
-
-  // export async function getSortedPostsData() {
-  //   // Instead of the file system,
-  //   // fetch post data from a database
-  //   return databaseClient.query('SELECT posts...')
-  // }
 }
+// Instead of the file system,
+// fetch post data from an external API endpoint
 
-  // Server-Side-Rendering
-  
+// const res = await fetch("..");
+// return res.json();
+
+// You can also query the database directly:
+
+// import someDatabaseSDK from 'someDatabaseSDK'
+// const databaseClient = someDatabaseSDK.createClient(...)
+
+// export async function getSortedPostsData() {
+//   // Instead of the file system,
+//   // fetch post data from a database
+//   return databaseClient.query('SELECT posts...')
+// }
+
+
+// Server-Side-Rendering
+
 // export async function getServerSideProps(context) {
 //   return {
 //     props: {
