@@ -6,7 +6,10 @@ import Link from "next/link";
 const name = "Florian";
 export const siteTitle = "Next.js Florian's website";
 
-export default function Layout({ children, home }) {
+export default function Layout({ children, home }: {
+  children: React.ReactNode
+  home?: boolean
+}) {
   return (
     <div className={styles.container}>
       <Head>
@@ -59,7 +62,7 @@ export default function Layout({ children, home }) {
       {!home && (
         <div className={styles.backToHome}>
           <Link href="/">
-            ← Back to home
+            <a>← Back to home</a>
           </Link>
         </div>
       )}
