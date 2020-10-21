@@ -5,46 +5,18 @@ import { getSortedPostsData } from "../lib/posts";
 import Head from 'next/head'
 import Link from "next/link";
 import Date from "../components/date";
-
-export async function getStaticProps() {
-  const allPostsData = getSortedPostsData();
-  return {
-    props: {
-      allPostsData,
-    },
-  };
-}
-// Instead of the file system,
-// fetch post data from an external API endpoint
-
-// const res = await fetch("..");
-// return res.json();
-
-// You can also query the database directly:
-
-// import someDatabaseSDK from 'someDatabaseSDK'
-// const databaseClient = someDatabaseSDK.createClient(...)
-
-// export async function getSortedPostsData() {
-//   // Instead of the file system,
-//   // fetch post data from a database
-//   return databaseClient.query('SELECT posts...')
-// }
+import { GetStaticProps } from "next";
 
 
-// Server-Side-Rendering
-
-// export async function getServerSideProps(context) {
-//   return {
-//     props: {
-//       // props for your component
-//     },
-//   };
-// }
-
-
-
-export default function Home({ allPostsData }) {
+export default function Home({
+  allPostsData
+}: {
+  allPostsData: {
+    date: string
+    title: string
+    id: string
+  }[]
+}) {
 
   return (
     <Layout home>
@@ -80,3 +52,39 @@ export default function Home({ allPostsData }) {
     </Layout>
   );
 }
+
+export const getStaticProps : GetStaticProps = async () {
+  const allPostsData = getSortedPostsData();
+  return {
+    props: {
+      allPostsData,
+    },
+  };
+}
+// Instead of the file system,
+// fetch post data from an external API endpoint
+
+// const res = await fetch("..");
+// return res.json();
+
+// You can also query the database directly:
+
+// import someDatabaseSDK from 'someDatabaseSDK'
+// const databaseClient = someDatabaseSDK.createClient(...)
+
+// export async function getSortedPostsData() {
+//   // Instead of the file system,
+//   // fetch post data from a database
+//   return databaseClient.query('SELECT posts...')
+// }
+
+
+// Server-Side-Rendering
+
+// export async function getServerSideProps(context) {
+//   return {
+//     props: {
+//       // props for your component
+//     },
+//   };
+// }
