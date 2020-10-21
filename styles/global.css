@@ -1,3 +1,18 @@
+/* @tailwind base; */
+/* Write your own custom base styles here */
+
+/* Start purging... */
+/* @tailwind components; */
+/* Stop purging. */
+
+/* Write your own custom component styles here */
+
+/* Start purging... */
+/* @tailwind utilities; */
+/* Stop purging. */
+
+/* Your own custom utilities */
+
 html,
 body {
   padding: 0;
@@ -25,18 +40,3 @@ img {
   max-width: 100%;
   display: block;
 }
-
-@tailwind base;
-/* Write your own custom base styles here */
-
-/* Start purging... */
-@tailwind components;
-/* Stop purging. */
-
-/* Write your own custom component styles here */
-
-/* Start purging... */
-@tailwind utilities;
-/* Stop purging. */
-
-/* Your own custom utilities */
